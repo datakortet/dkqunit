@@ -1,0 +1,40 @@
+
+html, body { background-color: #fafafa; }
+
+td > pre { margin: -8px; }
+
+.colcount(@n) {
+    -webkit-column-count: @n;
+    -moz-column-count: @n;
+    column-count: @n;
+}
+
+// define .col-1, .col-2, .col-3, etc.
+.coldef(@n) when (@n >= 1) {
+    .col-@{n} { .colcount(@n); }
+    .coldef(@n - 1);
+}
+.coldef(8);
+
+p.author { display: none; }
+
+dk-test {
+    width: 100%;
+
+    .box {
+        div { position: relative; }
+        div:hover { outline: 1px dotted blue; }
+        div:hover::before {
+            content: attr(class);
+            display: block;
+            position: absolute;
+            top: 4px; right: 4px;
+            font-size: 10px;
+            color: #79b0ef;
+        }
+    }
+
+    .panel-body {
+        transition: height 0.5s;
+    }
+}

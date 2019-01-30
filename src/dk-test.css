@@ -1,0 +1,32 @@
+html, body { background-color: #fafafa; }
+
+td > pre { margin: -8px; }
+
+
+
+.cols {
+    column-count: 3;
+    -moz-column-count: 3; /* Firefox */
+    -webkit-column-count: 3; /* Safari and Chrome */
+}
+
+p.author { display: none; }
+
+dk-test .box div:hover { outline: 1px dotted blue; }
+
+dk-test .box div:hover::before {
+    content: attr(class);
+    display: block;
+    float: right;
+    font-size: 10px;
+    color: #79b0ef;
+}
+
+/*noinspection CssInvalidElement*/
+dk-test {
+    width: 100%;
+}
+
+dk-test .panel-body {
+    transition: height 0.5s;
+}
